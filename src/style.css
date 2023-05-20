@@ -1,0 +1,36 @@
+._flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+* {
+    font-family: 'Encode Sans Condensed', sans-serif;
+}
+
+body {
+    background-color: black !important;
+    height: 100vh;
+}
+
+img {
+    max-height: 100%;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#content {
+    height: 10rem
+}
+
+#app {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2rem 0;
+}
+
