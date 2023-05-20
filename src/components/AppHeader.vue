@@ -30,12 +30,11 @@
           <a href="#"><img id="header-logo" class="img-fluid" src="../assets/img/dc-logo.png" alt="DC Logo"></a>
         </div>
         <div class="col-7 d-none d-lg-flex justify-content-end align-items-center">
-          <ul v-for="link in navbarLinks" class="d-flex m-0">
-            <li class="d-flex flex-column">
+          <ul class="d-flex m-0">
+            <li v-for="link in navbarLinks" class="d-flex flex-column">
               <a href="#">{{link.toUpperCase()}}</a>
               <div></div>
-            </li>
-            
+            </li>  
           </ul>
         </div>
       </div>

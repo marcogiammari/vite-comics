@@ -1,6 +1,37 @@
 <script>
   export default {
-    name: 'AppFeatures'
+    name: 'AppFeatures',
+    data() {
+        return {
+            features: [
+                {
+                    txt: 'Digital Comics',
+                    path: 'buy-comics-digital-comics.png'
+                },
+                {
+                    txt: 'DC Merchandise',
+                    path: 'buy-comics-merchandise.png'
+                },
+                {
+                    txt: 'Subscription',
+                    path: 'buy-comics-subscriptions.png'
+                },
+                {
+                    txt: 'Comic Shop Locator',
+                    path: 'buy-comics-shop-locator.png'
+                },
+                {
+                    txt: 'DC Power Visa',
+                    path: 'buy-dc-power-visa.svg'
+                }
+            ]
+        }
+    },
+    methods: {
+        getImagePath(imgPath) {
+            return new URL(imgPath, import.meta.url).href;
+        }
+    }
   }
 
 </script>
@@ -10,34 +41,10 @@
     <section id="features">
         <div class="container">
             <div class="row justify-content-center text-light">
-                <div class="feature d-flex _flex-center gap-3">
+                <div v-for="feat in features" class="feature d-flex _flex-center gap-3">
                     <a href="#" class="d-flex align-items-center gap-3">
-                        <img class="img-fluid" src="../assets/img/buy-comics-digital-comics.png" alt="digital comics">
-                        <span>DIGITAL COMICS</span>
-                    </a>
-                </div>
-                <div class="feature d-flex _flex-center gap-3">
-                    <a href="#" class="d-flex align-items-center gap-3">
-                        <img class="img-fluid" src="../assets/img/buy-comics-merchandise.png" alt="merchandise">
-                        <span>DC MERCHANDISE</span>
-                    </a>
-                </div>
-                <div class="feature d-flex _flex-center gap-3">
-                    <a href="#" class="d-flex align-items-center gap-3">
-                        <img class="img-fluid" src="../assets/img/buy-comics-subscriptions.png" alt="subscriptions">
-                        <span>SUBSCRIPTION</span>
-                    </a>
-                </div>
-                <div class="feature d-flex align-items-center">
-                    <a href="#" class="d-flex align-items-center gap-3">
-                        <img src="../assets/img/buy-comics-shop-locator.png" alt="shop-locator">
-                        <span>COMIC SHOP LOCATOR</span> 
-                    </a>
-                </div>
-                <div class="feature d-flex _flex-center gap-3">
-                    <a href="#" class="d-flex align-items-center gap-3">
-                        <img class="img-fluid" src="../assets/img/buy-dc-power-visa.svg" alt="dc-power-visa">
-                        <span>DC POWER VISA</span>
+                        <img class="img-fluid" :src="getImagePath(`../assets/img/${feat.path}`)" alt="digital comics">
+                        <span>{{feat.txt.toUpperCase()}}</span>
                     </a>
                 </div>
             </div>
