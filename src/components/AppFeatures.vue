@@ -43,7 +43,7 @@
             <div class="row justify-content-center text-light">
                 <div v-for="feat in features" class="feature d-flex _flex-center gap-3">
                     <a href="#" class="d-flex align-items-center gap-3">
-                        <img class="img-fluid" :src="getImagePath(`../assets/img/${feat.path}`)" alt="digital comics">
+                        <img class="img-fluid" :src="getImagePath(`../assets/img/${feat.path}`)" :alt="feat.txt">
                         <span>{{feat.txt.toUpperCase()}}</span>
                     </a>
                 </div>

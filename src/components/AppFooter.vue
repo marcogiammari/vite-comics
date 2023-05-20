@@ -26,7 +26,34 @@
                         links: ['DC', 'MAD Magazine', 'DC Kids', 'DC Universe', 'DC Power Visa']
                     }
                 ]
+            ],
+            footerSocialMedias: [
+                {
+                    media: 'Facebook',
+                    path: 'footer-facebook.png'
+                },
+                {
+                    media: 'Twitter',
+                    path: 'footer-twitter.png'
+                },
+                {
+                    media: 'Youtube',
+                    path: 'footer-youtube.png'
+                },
+                {
+                    media: 'Pinterest',
+                    path: 'footer-pinterest.png'
+                },
+                {
+                    media: 'Periscope',
+                    path: 'footer-periscope.png'
+                }
             ]
+        }
+    },
+    methods: {
+        getImagePath(imgPath) {
+            return new URL(imgPath, import.meta.url).href;
         }
     } 
   }
@@ -69,11 +96,7 @@
                                 <a href="#"><h5 class="p-1 m-0">FOLLOW US</h5></a>
                             </div>
                             <div class="text-secondary d-flex gap-2 fs-5">
-                                <a href="#"><img class="img-fluid" src="../assets/img/footer-facebook.png" alt="facebook"></a>
-                                <a href="#"><img class="img-fluid" src="../assets/img/footer-twitter.png" alt="twitter"></a>
-                                <a href="#"><img class="img-fluid" src="../assets/img/footer-youtube.png" alt="youtube"></a>
-                                <a href="#"><img class="img-fluid" src="../assets/img/footer-pinterest.png" alt="pinterest"></a>
-                                <a href="#"><img class="img-fluid" src="../assets/img/footer-periscope.png" alt="periscope"></a>
+                                <a v-for="icon in footerSocialMedias" href="#"><img class="img-fluid" :src="getImagePath(`../assets/img/${icon.path}`)" :alt="icon.name"></a>
                             </div>
                         </div>
                     </div>
