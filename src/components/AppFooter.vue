@@ -3,11 +3,30 @@
     name: 'AppFooter',
     data() {
         return {
-            topSectionLinks: {
-                
-
-                
-            }
+            footerCols: [
+                [
+                    {
+                        heading: 'Dc Comics',
+                        links: ['Characters', 'Comics', 'Movies', 'TV', 'Games', 'Videos', 'News']
+                    },
+                    {
+                        heading: 'Shop',
+                        links: ['Shop DC', 'Shop DC Collectibles']
+                    }
+                ],
+                [
+                    {
+                        heading: 'Dc',
+                        links: ['Terms Of Use', 'Privacy Policy (New)', 'Ad Choices', 'Advertising', 'Jobs', 'Subscriptions', 'Talent Workshops', ' CPSC Certificates', 'Ratings', 'Shop Help', 'Contact Us']
+                    }
+                ],
+                [
+                    {
+                        heading: 'Sites',
+                        links: ['DC', 'MAD Magazine', 'DC Kids', 'DC Universe', 'DC Power Visa']
+                    }
+                ]
+            ]
         }
     } 
   }
@@ -19,61 +38,20 @@
     <footer>
             <div id="footer-top-section">
                 <div class="container">
-                    <div class="row">
-                        <div class="col-6">
-                            <div class="row h-100 p-5">
-                                <div class="col-3 d-flex justify-content-start flex-column">
-                                    <div class="links-list text-white">
-                                        <h5>DC COMICS</h5>
+                    <div class="row justify-content-around">
+                        <div class="col-5">
+                            <div class="row h-100 py-5">
+                                <div v-for="col in footerCols" class="col-4 d-flex justify-content-start flex-column">
+                                    <div v-for="obj in col" class="links-list text-white">
+                                        <h5>{{ obj.heading.toUpperCase() }}</h5>
                                         <ul class="text-white p-0">
-                                            <a href="#"><li>Prova</li></a>  
-                                            <a href="#"><li>Prova</li></a>  
-                                            <a href="#"><li>Prova</li></a>  
-                                            <a href="#"><li>Prova</li></a>  
-                                            <a href="#"><li>Prova</li></a>  
-                                            <a href="#"><li>Prova</li></a>  
-                                            <a href="#"><li>Prova</li></a>  
-                                        </ul>
-                                    </div>
-                                    <div class="links-list text-white">
-                                        <h5>DC COMICS</h5>
-                                        <ul class="text-white p-0">
-                                            <a href="#"><li>Prova</li></a>  
-                                            <a href="#"><li>Prova</li></a>  
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col-3 d-flex justify-content-start flex-column">
-                                    <div class="links-list text-white">
-                                        <h5>DC COMICS</h5>
-                                        <ul class="text-white p-0">
-                                            <a href="#"><li>Prova</li></a>  
-                                            <a href="#"><li>Prova</li></a>  
-                                            <a href="#"><li>Prova</li></a>  
-                                            <a href="#"><li>Prova</li></a>  
-                                            <a href="#"><li>Prova</li></a>  
-                                            <a href="#"><li>Prova</li></a>  
-                                            <a href="#"><li>Prova</li></a>  
-                                            <a href="#"><li>Prova</li></a>  
-                                            <a href="#"><li>Prova</li></a>  
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col-3">
-                                    <div class="links-list text-white">
-                                        <h5>DC COMICS</h5>
-                                        <ul class="text-white p-0">
-                                            <a href="#"><li>Prova</li></a>  
-                                            <a href="#"><li>Prova</li></a> 
-                                            <a href="#"><li>Prova</li></a>  
-                                            <a href="#"><li>Prova</li></a>  
-                                            <a href="#"><li>Prova</li></a>  
+                                            <a v-for="link in obj.links" href="#"><li>{{ link }}</li></a>  
                                         </ul>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-6 h-100 d-flex align-items-center">
+                        <div class="col-5 h-100 d-flex align-items-center">
                             <img id="bg-logo" src="../assets/img/dc-logo-bg.png" alt="dc logo">
                         </div>
                     </div>
@@ -109,6 +87,10 @@
 
 $primarycolor: #0C7CEC;
 
+div {
+    height: 100%;
+}
+
 #footer-top-section {
     height: 22rem;
     overflow: hidden;
@@ -122,7 +104,7 @@ $primarycolor: #0C7CEC;
 }
 
 #bg-logo {
-    all: unset;
+    max-height: unset;
 }
 
 #footer-top-section h5 {
