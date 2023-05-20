@@ -1,6 +1,22 @@
 <script>
   export default {
-    name: 'AppHeader'
+    name: 'AppHeader',
+    data() {
+        return {
+            navbarLinks: [
+              'Characters',
+              'Comics',
+              'Movies',
+              'Tv',
+              'Games',
+              'Collectible',
+              'Videos',
+              'Fans',
+              'News',
+              'Shop'
+            ]
+        }
+    } 
   }
 
 </script>
@@ -14,47 +30,12 @@
           <a href="#"><img id="header-logo" class="img-fluid" src="../assets/img/dc-logo.png" alt="DC Logo"></a>
         </div>
         <div class="col-7 d-none d-lg-flex justify-content-end align-items-center">
-          <ul class="d-flex m-0">
+          <ul v-for="link in navbarLinks" class="d-flex m-0">
             <li class="d-flex flex-column">
-              <a href="#">Prova</a>
+              <a href="#">{{link.toUpperCase()}}</a>
               <div></div>
             </li>
-            <li class="d-flex flex-column">
-              <a href="#">Prova</a>
-              <div></div>
-            </li>
-            <li class="d-flex flex-column">
-              <a href="#">Prova</a>
-              <div></div>
-            </li>
-            <li class="d-flex flex-column">
-              <a href="#">Prova</a>
-              <div></div>
-            </li>
-            <li class="d-flex flex-column">
-              <a href="#">Prova</a>
-              <div></div>
-            </li>
-            <li class="d-flex flex-column">
-              <a href="#">Prova</a>
-              <div></div>
-            </li>
-            <li class="d-flex flex-column">
-              <a href="#">Prova</a>
-              <div></div>
-            </li>
-            <li class="d-flex flex-column">
-              <a href="#">Prova</a>
-              <div></div>
-            </li>
-            <li class="d-flex flex-column">
-              <a href="#">Prova</a>
-              <div></div>
-            </li>
-            <li class="d-flex flex-column">
-              <a href="#">Prova</a>
-              <div></div>
-            </li>
+            
           </ul>
         </div>
       </div>
