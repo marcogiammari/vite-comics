@@ -19,7 +19,7 @@ export default {
         <div class="container">
             <h2 id="current-series" class="text-white position-absolute">CURRENT SERIES</h2>
             <div class="row py-5">
-                <div class="my_card col-2 _flex-center flex-column gap-4" v-for="card in cards">
+                <div class="my_card col-2 text-center d-flex flex-column gap-3" v-for="card in cards">
                     <div class="img-wrapper">
                         <img class="img-fluid" :src="card.thumb" alt="card.series">
                     </div>
@@ -48,7 +48,6 @@ export default {
     .img-wrapper {
         width: 10vw;
         height: 10vw;
-        object-fit: cover;
         
         img {
             width: 100%;
