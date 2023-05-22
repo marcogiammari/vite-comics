@@ -105,7 +105,7 @@
 
 <style lang="scss" scoped>
 
-$primarycolor: #0C7CEC;
+@use '../styles/partials/variables' as *;
 
 #footer-top-section {
     background: no-repeat url(../assets/img/footer-bg.jpg);

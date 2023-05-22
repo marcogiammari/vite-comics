@@ -54,7 +54,7 @@
 
 <style lang="scss" scoped>
 
-$primarycolor: #0C7CEC;
+@use '../styles/partials/variables' as *;
 
 #features {
     background-color: $primarycolor;

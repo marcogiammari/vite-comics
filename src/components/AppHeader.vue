@@ -47,7 +47,7 @@
 
 <style lang="scss" scoped>
 
-$primarycolor: #0C7CEC;
+@use '../styles/partials/variables' as *;
 
   div, ul {
     height: 100%;
