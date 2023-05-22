@@ -107,12 +107,14 @@
 
 @use '../styles/partials/variables' as *;
 
+
 #footer-top-section {
     background: no-repeat url(../assets/img/footer-bg.jpg);
     background-size: cover;
 
     h5 {
         font-weight: 700 !important;
+        font-family: 'Encode Sans Condensed', sans-serif;
     }
 
     ul {
@@ -143,6 +145,7 @@
 #footer-bottom-section {
     background-color: #303030;
     min-height: 6rem;
+    font-family: 'Encode Sans Condensed', sans-serif;
 
     h5:hover {
         border: 2px solid $primarycolor;

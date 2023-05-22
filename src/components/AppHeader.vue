@@ -55,6 +55,7 @@
 
   header {
     height: 100px;
+    font-family: 'Encode Sans Condensed', sans-serif;
 
     i {
       color: $primarycolor;
