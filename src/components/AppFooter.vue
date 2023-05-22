@@ -65,8 +65,8 @@
     <footer>
             <div id="footer-top-section">
                 <div class="container">
-                    <div class="row justify-content-around">
-                        <div class="col-5">
+                    <div class="row justify-content-start">
+                        <div class="col-lg-5">
                             <div class="row h-100 py-5">
                                 <div v-for="col in footerCols" class="col-4 d-flex justify-content-start flex-column">
                                     <div v-for="obj in col" class="links-list text-white">
@@ -78,9 +78,6 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-5 h-100 d-flex align-items-center">
-                            <img id="bg-logo" src="../assets/img/dc-logo-bg.png" alt="dc logo">
-                        </div>
                     </div>
                 </div>
 
@@ -88,14 +85,14 @@
             <div id="footer-bottom-section" class="_flex-center">
                 <div class="container">
                     <div class="row d-flex justify-content-between align-items-center">
-                        <div id="sign-up" class="col-3 d-flex justify-content-center align-items-center text-white">
+                        <div id="sign-up" class="col-4 d-flex justify-content-center align-items-center text-white">
                             <a href="#"><h5 class="p-1 text-white m-0">SIGN-UP NOW!</h5></a>
                         </div>
                         <div id="social-media" class="col-4 _flex-center gap-3">
                             <div>
                                 <a href="#"><h5 class="p-1 m-0">FOLLOW US</h5></a>
                             </div>
-                            <div class="text-secondary d-flex gap-2 fs-5">
+                            <div class="text-secondary d-none d-lg-flex gap-2 fs-5">
                                 <a v-for="icon in footerSocialMedias" href="#"><img class="img-fluid" :src="getImagePath(`../assets/img/${icon.path}`)" :alt="icon.name"></a>
                             </div>
                         </div>
@@ -110,61 +107,60 @@
 
 $primarycolor: #0C7CEC;
 
-div {
-    height: 100%;
-}
-
 #footer-top-section {
-    height: 22rem;
-    overflow: hidden;
     background: no-repeat url(../assets/img/footer-bg.jpg);
     background-size: cover;
+
+    h5 {
+        font-weight: 700 !important;
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    li {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        color: rgba(211, 211, 211, 0.733);
+    }
+
+    .container > .row {
+        background-image: url(../assets/img/dc-logo-bg.png);
+        background-repeat: no-repeat;
+        background-position: right;
+    }
+
+    a {
+        text-decoration: none !important;
+        font-size: 14px;
+
+        &:hover {
+            text-decoration: underline grey !important;
+        }
+    }
 }
 
 #footer-bottom-section {
     background-color: #303030;
     min-height: 6rem;
-}
 
-#bg-logo {
-    max-height: unset;
-}
+    h5:hover {
+        border: 2px solid $primarycolor;
+    }
 
-#footer-top-section h5 {
-    font-weight: 700 !important;
-}
+    a {
+        text-decoration: none;
+    }
 
+    #social-media h5 {
+        color: $primarycolor;
+    }
 
-#footer-bottom-section h5:hover {
-    border: 2px solid $primarycolor;
-}
-
-#footer-top-section a {
-    text-decoration: none !important;
-    font-size: 14px;
-
-        &:hover {
-            text-decoration: underline grey !important;
-        }
-}
-
-#footer-bottom-section a {
-    text-decoration: none !important;
 }
 
 
-ul {
-    list-style: none;
-}
 
-li {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    color: rgba(211, 211, 211, 0.733);
-}
 
-#social-media h5 {
-    color: $primarycolor;
-}
 
 
 </style>
